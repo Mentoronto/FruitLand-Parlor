@@ -1,10 +1,10 @@
 import dbConnect from "../../../lib/mongo";
 import Order from "../../../models/Order";
 
-const handler = async (req,res)=>{
+export default async function handler(req,res){
   const {method}=req;
 
-  await dbConnect ();
+  dbConnect ();
 
   if(method === "GET"){
     try{
@@ -18,11 +18,9 @@ const handler = async (req,res)=>{
   if(method === "POST"){
     try{
       const order = await Order.create(req.body);
-      res.status(201).json(order)
+      res.status(201).json(order);
     }catch(err){
       res.status(500).json(err);
     }
   }
 }
-
-export default handler;
