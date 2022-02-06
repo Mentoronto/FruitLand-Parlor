@@ -1,0 +1,94 @@
+.container{
+  position: relative;
+  padding:80px 0px;
+  display: flex;
+  height: calc(100vh - 200px);
+  background-color: rgb(240, 227, 227);
+}
+
+.left{
+  flex: 2;
+  
+  
+.imgContainer{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.table{
+  width: 100%;
+  border-spacing: 10px;
+}
+
+.name{
+  font-weight: 500;
+  font-size: 1.2rem;
+  }
+
+  .total{
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .tr{
+   text-align: center;
+  }
+}
+
+.right {
+  flex: 1;
+
+  .wrapper{
+    width: 70%;
+    position: relative;
+    margin: 0 auto;
+    max-height: 300px;
+    background-color:rgb(77, 74, 74);
+    padding: 10px 40px 15px 40px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  .totalText{
+    margin-bottom: 5px;
+  }
+
+  .totalTextTitle{
+    margin-right: 10px;
+  }
+
+  .button{
+    margin-top: 15px;
+    height: 30px;
+    background-color: rgb(13, 160, 45);
+    color: white;
+    border: none;
+    width: 50%;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .paymentMethods{
+    margin-top:10px ;
+    display:flex ;
+    flex-direction: column;
+
+    .payButton{
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      margin: 5px 0;
+      padding:5px ;
+      font-size: 1.2rem;
+      background-color:rgb(13, 160, 45);
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}

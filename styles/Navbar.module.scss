@@ -1,0 +1,100 @@
+.container{
+  background-color:rgb(13, 160, 45);
+  height: 100px;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+.callButton{
+  background-color:white;
+  border-radius: 50%;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: rgb(223, 217, 217);
+  }
+}
+.logo{
+  position: relative;
+  top: 40px;
+  cursor: pointer;
+  height: 150px;
+  width: 150px;
+  z-index: 999;
+}
+
+.texts{
+  margin-left:10px ;
+  color: white;
+  font-weight: bold;
+}
+
+.item{
+  display: flex;
+  flex:1;
+  align-items: center;
+
+  &:nth-child(2){
+    flex:4;
+    justify-content: center;
+   
+  }
+  &:nth-child(3){
+    justify-content: flex-end;
+   
+  }
+}
+
+.list{
+  padding: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  color: white;
+  
+  .listItem{
+    margin: 100px;
+    font-weight: 500px;
+    font-size: 1.2rem;
+
+    &:hover{
+      cursor: pointer;
+      color: rgb(245, 141, 72);
+      font-weight: bold;
+      border-radius: 50%;
+      transition:0.5s ease-in-out ;
+      height: 30px;
+      scale: 1.2;
+    }
+  
+  }
+}
+
+.cart{
+  position: relative;
+  cursor: pointer;
+
+  .counter{
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 20px;
+    height: 20px;
+    background-color:white ;
+    border-radius: 50%;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color:rgb(13, 160, 45)  ;
+  }
+}

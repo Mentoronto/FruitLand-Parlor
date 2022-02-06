@@ -1,0 +1,24 @@
+.container{
+  background-color:rgba(13, 160, 45, 0.781);
+  display: flex;
+}
+
+.item{
+  color: white;
+  flex: 1;
+  position: relative;
+  
+  &:nth-child(1){
+    margin-left:50px ;
+  }
+
+  &:nth-child(2){
+    font-weight: bold;
+    display: flex;
+    margin-right: 10px;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+
+}

@@ -1,0 +1,200 @@
+.container{
+  height: calc(100vh - 200px);
+  display: flex;
+  background-color: rgb(224, 195, 195);
+  overflow: hidden;
+  position: relative;
+
+    .trioFruit{
+      position: absolute;
+      left: -50px;
+      z-index: 0;
+      top: 50%;
+      animation: MoveUpDown 4.5s linear infinite;
+
+      @keyframes MoveUpDown {
+        0% {
+          transform: scaleX(-1) translateY(0) translateX(0);
+        }
+        50% {
+          transform: scaleX(-1) translateY(-20px);    
+        }
+        100%{
+          transform: scaleX(-1)  translateY(-0px) translateX(-0);
+        }
+      }
+    }
+
+    .trioFruit2{
+      position: absolute;
+      right: -50px;
+      z-index: 0;
+      top: 50%;
+      bottom: 50%;
+      animation: MoveUpDown2 4.5s linear infinite;
+
+      @keyframes MoveUpDown2 {
+        0% {
+          transform: translateY(0) translateX(0);
+        }
+        50% {
+          transform: translateY(-20px);    
+        }
+        100%{
+          transform: translateY(-0px) translateX(-0);
+        }
+      }
+    }
+}
+
+.left{
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .imgContainer{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+  }
+  
+  .shakeImg{
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+
+    
+  }
+}
+
+.right {
+  margin-top: 50px;
+  flex: 1;
+  padding: 20px;
+
+  .price{
+    font-size: 1.5rem;
+  }
+
+  .desc{
+    font-size: 1.1rem;
+  }
+
+  .choose{
+    font-size:1.4rem ;
+  }
+
+  .sizes{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+  
+  .size{
+    position: relative;
+    width: 45px;
+    height: 45px;
+    margin-top:20px;
+
+    &:hover{
+      background-color: red;
+      scale: 1.6;
+      border-radius:45%;
+    }
+
+    .sizeImg{
+      filter:invert(55%) sepia(100%) saturate(3.5) hue-rotate(45deg);
+      cursor: pointer;
+    }
+    
+      &:nth-child(2){
+        width: 65px;
+        height: 65px;
+
+        &:hover{
+          background-color: red;
+          border-radius:45%;
+          scale: 1.2;
+          width: 80px;
+        }
+
+        .number{
+          top: -10px;
+          right: -45px;
+        }
+      }
+      &:nth-child(3){
+        width: 75px;
+        height: 75px;
+
+        &:hover{
+          background-color: red;
+          border-radius:45%;
+          scale: 1.1;
+          width: 90px;
+        }
+        .number{
+          top: -10px;
+          right: -25px;
+        }
+      }
+
+    }
+  }
+
+  .number{
+    position: absolute;
+    top: -10px;
+    right: -30px;
+    padding: 2px 5px;
+    background-color:rgba(13, 160, 45, 0.781);
+    border-radius: 25px;
+    color: white;
+   } 
+
+   .ingredients{
+     display: flex;
+     flex-wrap: wrap;
+    
+   }
+   .option{
+     display: flex;
+     align-items: center;
+     margin:0 20px 20px 0;
+     font-size:1.1rem ;
+     font-weight:400;
+   }
+
+   .checkbox{
+     width: 20px;
+     height: 20px;
+     cursor: pointer;
+   }
+
+   .add{
+    display: flex;
+    align-items: center;
+    
+     .quantity{
+       width: 70px;
+       height: 30px;
+       font-size: 1.2rem;
+      }
+      
+      .button{
+        height: 30px;
+        margin-left: 20px;
+        background-color: rgba(13,160,45,0.781);
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 5px;
+        padding:0 5px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+}
