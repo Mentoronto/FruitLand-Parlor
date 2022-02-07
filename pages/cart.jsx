@@ -10,9 +10,11 @@ import {
 import { useRouter } from "next/router";
 import {reset} from "../Redux/cartSlice";
 import axios from "axios";
+import OrderDetails from "../component/OrderDetails";
 
 const Cart = () => {
   const [open,setOpen]=useState(false);
+  const [cash,setCash] = useState(false);
   //paypal 
   const cart = useSelector((state)=>state.cart);
   const amount = cart.total;
@@ -28,9 +30,6 @@ const Cart = () => {
       res.status === (201) && router.push("/orders/"+ res.data._id);
       dispatch(reset());
     }catch(err){
-      console.log('CreateOrderError :>> ', err);
-      console.log('data :>> ', data);
-      console.log('data._id :>> ', data._id);
     }
   }
   
@@ -155,7 +154,7 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
           </div>
           {open ?(
             <div className={styles.paymentMethods}>
-              <button className={styles.payButton}>CASH</button>
+              <button className={styles.payButton} onClick={()=>setCash(true)}>CASH</button>
           <PayPalScriptProvider
                options={{
                  "client-id": "AYOsJCHK2EGXSYXqumgLMXJzHA99LK0sJfB101-Zsajxogb9xjNd_Rh-3dq1YkoUjp09Fq80e4BGWx4C",
@@ -171,6 +170,9 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
           )}
         </div>
       </div>
+      {cash && (
+        <OrderDetails total={cart.total} createOrder={createOrder}/>
+      )}
     </div>
   );
 };

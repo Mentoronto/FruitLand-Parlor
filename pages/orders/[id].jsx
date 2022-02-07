@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const Order = ({order}) => {
   console.log('order :>> ', order);
-  const status = 0;
+  const status = order.status;
 
   const statusClass =(index)=>{
     if (index - status<1) return styles.done;
@@ -25,16 +25,16 @@ const Order = ({order}) => {
             </tr>
             <tr>
               <td>
-                <span className={styles.id}>1212</span>
+                <span className={styles.id}>{order._id}</span>
               </td>
               <td>
-                <span className={styles.name}>1212</span>
+                <span className={styles.name}>{order.customer}</span>
               </td>
               <td>
-              <span className={styles.address}>212</span>
+              <span className={styles.address}>{order.address}</span>
               </td>
               <td>
-                <span className={styles.total}>$1</span>
+                <span className={styles.total}>${order.total}</span>
               </td>
             </tr>
           </table>
@@ -74,13 +74,13 @@ const Order = ({order}) => {
         <div className={styles.wrapper}>
             <h2 className={styles.title}>CART TOTAL</h2>
             <div className={styles.totalText}>
-              <b className={styles.totalTextTitle}>Subtotal:</b>$79.60
+              <b className={styles.totalTextTitle}>Subtotal:</b>${order.total}
             </div>
             <div className={styles.totalText}>
               <b className={styles.totalTextTitle}>Discount:</b>$0.00
             </div>
             <div className={styles.totalText}>
-              <b className={styles.totalTextTitle}>Total:</b>$79.60
+              <b className={styles.totalTextTitle}>Total:</b>${order.total}
             </div>
             <button disabled className={styles.button}>PAID</button>
         </div>
