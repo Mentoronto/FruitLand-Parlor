@@ -1,0 +1,48 @@
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100vh - 100px);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .input {
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  font-size: 1.2rem;
+  color: #948487;
+}
+
+.container .button {
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: #46c946;
+  padding: 10px 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 200;
+}
+
+.container .error {
+  font-size: 13px;
+  color: red;
+}
+/*# sourceMappingURL=Login.module.css.map */

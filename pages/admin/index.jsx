@@ -146,7 +146,16 @@ const index = ({orders, fruitProducts,shakeProducts}) => {
   );
 };
 
-export const getServerSideProps = async () =>{
+export const getServerSideProps = async (ctx) =>{
+  const myCookie = ctx.req?.cookies || ""; 
+  if(myCookie.token !== process.env.TOKEN){
+    return {
+      redirect:{
+        destination:"/admin/login",
+        permanent:false,
+      }
+    }
+  }
   const fruitProductRes = await axios.get("http://localhost:3000/api/fruitProducts");
   const shakeProductRes = await axios.get("http://localhost:3000/api/shakeProducts");
   const orderRes = await axios.get("http://localhost:3000/api/orders");
