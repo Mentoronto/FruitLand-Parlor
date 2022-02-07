@@ -151,7 +151,7 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
             <b className={styles.totalTextTitle}>Discount:</b>$0.00
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Total:</b>${cart.total}
+            <b className={styles.totalTextTitle}>Total Monies:</b>${cart.total}
           </div>
           {open ?(
             <div className={styles.paymentMethods}>
