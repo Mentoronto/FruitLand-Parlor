@@ -30,9 +30,8 @@ export default async function handler(req,res){
 
   if(method === "DELETE"){
     try{
-      const product = await fruitProduct.create(req.body);
-      res.status(201).json(product);
-
+      await fruitProduct.findByIdAndDelete(id);
+      res.status(201).json("The fruit has been deleted");
     }catch(err){
       res.status(500).json(err);
     }

@@ -30,9 +30,8 @@ export default async function handler(req,res){
 
   if(method === "DELETE"){
     try{
-      const product = await shakeProduct.create(req.body);
-      res.status(201).json(product);
-
+      await shakeProduct.findByIdAndDelete(id);
+      res.status(201).json("The Shake has been deleted!");
     }catch(err){
       res.status(500).json(err);
     }
