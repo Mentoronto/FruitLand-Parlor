@@ -14,7 +14,7 @@ import axios from "axios";
 const Cart = () => {
   const [open,setOpen]=useState(false);
   //paypal 
-  const cart = useSelector(state=>state.cart);
+  const cart = useSelector((state)=>state.cart);
   const amount = cart.total;
   const currency = "USD";
   const style = {"layout":"vertical"};
@@ -22,10 +22,10 @@ const Cart = () => {
   const router = useRouter();
   
 
-  const createOrder = async(data)=>{
+  const createOrder = async (data) =>{
     try{
       const res = await axios.post("http://localhost:3000/api/orders",data);
-      res.status === 201 && router.push("/orders/"+ res.data._id);
+      res.status === (201) && router.push("/orders/"+ res.data._id);
       dispatch(reset());
     }catch(err){
       console.log('CreateOrderError :>> ', err);
@@ -151,7 +151,7 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
             <b className={styles.totalTextTitle}>Discount:</b>$0.00
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Total Monies:</b>${cart.total}
+            <b className={styles.totalTextTitle}>Total: </b>${cart.total}
           </div>
           {open ?(
             <div className={styles.paymentMethods}>

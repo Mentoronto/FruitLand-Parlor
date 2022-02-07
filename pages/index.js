@@ -21,7 +21,7 @@ export default function Home({shakeproducts, fruitproducts}) {
 }
 
 export const getServerSideProps = async () =>{
-  axios.defaults.baseURL = 'http://localhost:3000/';
+  // axios.defaults.baseURL = 'http://localhost:3000/';
   const resOne = await axios.get("http://localhost:3000/api/shakeProducts"); 
   const resTwo = await axios.get("http://localhost:3000/api/fruitProducts");
   return{

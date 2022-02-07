@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
-const OrderSchema = new mongoose.Schema({
+const OrderSchema = new mongoose.Schema(
+  {
     customer:{
       type:String, 
       required:true,
@@ -31,6 +32,6 @@ const OrderSchema = new mongoose.Schema({
  {timestamps:true}
 );
 
-export default mongoose.models.OrderProduct || mongoose.model("Order", OrderSchema); 
+export default mongoose.models.Order || mongoose.model("Order", OrderSchema); 
 
 //if model already exists, do not create it again. If none, create new model
