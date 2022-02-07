@@ -155,7 +155,7 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
           </div>
           {open ?(
             <div className={styles.paymentMethods}>
-              <button className={styles.payButton}>CAsSH</button>
+              <button className={styles.payButton}>CASH</button>
           <PayPalScriptProvider
                options={{
                  "client-id": "AYOsJCHK2EGXSYXqumgLMXJzHA99LK0sJfB101-Zsajxogb9xjNd_Rh-3dq1YkoUjp09Fq80e4BGWx4C",
