@@ -5,7 +5,7 @@ import axios from "axios";
 import { addProduct } from "../../Redux/cartSlice";
 import { useDispatch } from "react-redux";
 
-const fruitProduct = ({fruit}) => {
+const FruitProduct = ({fruit}) => {
  console.log('fruit :>> ', fruit);
 
   const [size,SetSize] = useState(0);
@@ -92,4 +92,4 @@ export const getServerSideProps = async ({params}) =>{
   };
 };
 
-export default fruitProduct;
+export default FruitProduct;

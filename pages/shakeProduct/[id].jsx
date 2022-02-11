@@ -5,7 +5,7 @@ import axios from "axios";
 import { addProduct } from "../../Redux/cartSlice";
 import { useDispatch } from "react-redux";
 
-const shakeProduct = ({shake}) => {
+const ShakeProduct = ({shake}) => {
  
   const [size,SetSize] = useState(0);
   const [price,SetPrice]= useState(shake.prices[0]);
@@ -116,4 +116,4 @@ export const getServerSideProps = async ({params}) =>{
   };
 };
 
-export default shakeProduct;
+export default ShakeProduct;
