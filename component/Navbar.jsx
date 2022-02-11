@@ -23,7 +23,9 @@ const Navbar = () => {
       <Link href={`/`} passHref>
         <li className={styles.listItem}>Homepage</li>
       </Link>
+      <Link  href={"/#Main-section"} passHref scroll={false}>
         <li className={styles.listItem}>Menu</li>
+      </Link>
         <div className={styles.logo}>
         <Image src="/img/logo.png" alt=""  layout="fill"/>
         </div>
