@@ -8,21 +8,21 @@ import { useDispatch } from "react-redux";
 const fruitProduct = ({fruit}) => {
  console.log('fruit :>> ', fruit);
 
-  const [size,setSize] = useState(0);
-  const [price,setPrice] = useState(fruit.prices[0]);
-  const [quantity,setQuantity]=useState(1);
+  const [size,SetSize] = useState(0);
+  const [price,SetPrice] = useState(fruit.prices[0]);
+  const [quantity,SetQuantity]=useState(1);
   const extras = fruit.extraOptions;
   const dispatch = useDispatch();
 
 
   const handleSize = (sizeIndex) =>{
     const difference = fruit.prices[sizeIndex]- fruit.prices[size];
-    setSize(sizeIndex);
+    SetSize(sizeIndex);
     changePrice(difference);
   }
 
   const changePrice = (number)=>{
-    setPrice(price+number);
+    SetPrice(price+number);
   }
 
   const handleClick = ()=>{
@@ -73,7 +73,7 @@ const fruitProduct = ({fruit}) => {
                 ))}
             </div>
             <div className={styles.add}>
-              <input onChange={(e)=>setQuantity(e.target.value)} type="number" defaultValue={1} min={0} className={styles.quantity} />
+              <input onChange={(e)=>SetQuantity(e.target.value)} type="number" defaultValue={1} min={0} className={styles.quantity} />
               <button className={styles.button}  onClick={handleClick}>Add to Cart</button>
             </div>
         </div>

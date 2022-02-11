@@ -13,8 +13,8 @@ import axios from "axios";
 import OrderDetails from "../component/OrderDetails";
 
 const Cart = () => {
-  const [open,setOpen]=useState(false);
-  const [cash,setCash] = useState(false);
+  const [open,SetOpen]=useState(false);
+  const [cash,SetCash] = useState(false);
   //paypal 
   const cart = useSelector((state)=>state.cart);
   const amount = cart.total;
@@ -154,7 +154,7 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
           </div>
           {open ?(
             <div className={styles.paymentMethods}>
-              <button className={styles.payButton} onClick={()=>setCash(true)}>CASH</button>
+              <button className={styles.payButton} onClick={()=>SetCash(true)}>CASH</button>
           <PayPalScriptProvider
                options={{
                  "client-id": "AYOsJCHK2EGXSYXqumgLMXJzHA99LK0sJfB101-Zsajxogb9xjNd_Rh-3dq1YkoUjp09Fq80e4BGWx4C",
@@ -166,7 +166,7 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
               </PayPalScriptProvider>
           </div>
               ):(
-            <button onClick={()=>setOpen(true)} className={styles.button}>CHECK OUT</button>
+            <button onClick={()=>SetOpen(true)} className={styles.button}>CHECK OUT</button>
           )}
         </div>
       </div>

@@ -7,20 +7,20 @@ import { useDispatch } from "react-redux";
 
 const shakeProduct = ({shake}) => {
  
-  const [size,setSize] = useState(0);
-  const [price,setPrice]= useState(shake.prices[0]);
-  const [extras,setExtras]=useState([]);
-  const [quantity,setQuantity]=useState(1);
+  const [size,SetSize] = useState(0);
+  const [price,SetPrice]= useState(shake.prices[0]);
+  const [extras,SetExtras]=useState([]);
+  const [quantity,SetQuantity]=useState(1);
   const dispatch = useDispatch();
 
   const handleSize = (sizeIndex) =>{
     const difference = shake.prices[sizeIndex]-shake.prices[size];
-    setSize(sizeIndex);
+    SetSize(sizeIndex);
     changePrice(difference); 
   }
 
   const changePrice =(number)=>{
-    setPrice(price+number);
+    SetPrice(price+number);
   }
 
 
@@ -29,10 +29,10 @@ const shakeProduct = ({shake}) => {
 
     if(checked){
       changePrice(option.price);
-      setExtras((prev)=>[...prev,option])
+      SetExtras((prev)=>[...prev,option])
     }else{
       changePrice(-option.price);
-      setExtras(extras.filter(extra=>extra._id!== option._id));
+      SetExtras(extras.filter(extra=>extra._id!== option._id));
     }
   };
 
@@ -92,7 +92,7 @@ const shakeProduct = ({shake}) => {
             </div>
             <div className={styles.add}>
               <input 
-                onChange={(e)=>setQuantity(e.target.value)}
+                onChange={(e)=>SetQuantity(e.target.value)}
                 type="number" 
                 defaultValue={1} min={0} 
                 className={styles.quantity} 

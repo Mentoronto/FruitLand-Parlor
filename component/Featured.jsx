@@ -5,7 +5,7 @@ import { faChevronCircleRight,faChevronCircleLeft  } from '@fortawesome/free-sol
 import { useState } from "react";
 
 const Featured = () => {
-  const [index,setIndex] = useState(0);
+  const [index,SetIndex] = useState(0);
 
   const images = [
     "/img/Featured2.png",
@@ -15,10 +15,10 @@ const Featured = () => {
 
   const handleArrow =(direction)=>{
     if (direction == "l"){
-      setIndex(index !==0 ? index-1 : 2) 
+      SetIndex(index !==0 ? index-1 : 2) 
     }
     if (direction == "r"){
-      setIndex(index !==2 ? index+1 : 0) 
+      SetIndex(index !==2 ? index+1 : 0) 
     }
   }
 

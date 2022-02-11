@@ -4,15 +4,15 @@ import { useState } from "react";
 import styles from "../../styles/Admin.module.css"
 
 const index = ({orders, fruitProducts,shakeProducts}) => {
-  const [fruitList,setFruitList]=useState(fruitProducts);
-  const [shakeList,setShakeList]=useState(shakeProducts);
-  const [orderList,setOrderList]=useState(orders);
+  const [fruitList,SetFruitList]=useState(fruitProducts);
+  const [shakeList,SetShakeList]=useState(shakeProducts);
+  const [orderList,SetOrderList]=useState(orders);
   const status=["Preparing","On the Way", "Delivered"];
 
   const handleFruitDelete = async (id)=>{
       try{
           const res = await axios.delete("http://localhost:3000/api/fruitProducts/"+id);
-          setFruitList(fruitList.filter(fruit=>fruit._id !== id));
+          SetFruitList(fruitList.filter(fruit=>fruit._id !== id));
       }catch(err){
         console.log('err :>> ', err);
       }
@@ -20,7 +20,7 @@ const index = ({orders, fruitProducts,shakeProducts}) => {
   const handleShakeDelete = async (id)=>{
     try{
         const res = await axios.delete("http://localhost:3000/api/shakeProducts/"+id);
-        setShakeList(shakeList.filter(shake=>shake._id !== id));
+        SetShakeList(shakeList.filter(shake=>shake._id !== id));
     }catch(err){
       console.log('err :>> ', err);
     }
@@ -33,7 +33,7 @@ const index = ({orders, fruitProducts,shakeProducts}) => {
    
     try{
       const res = await axios.put("http://localhost:3000/api/orders/"+id,{status:currentStatus+1,});
-      setOrderList([
+      SetOrderList([
         res.data,
         ...orderList.filter(order=>order._id !== id),
       ]);
@@ -127,7 +127,7 @@ const index = ({orders, fruitProducts,shakeProducts}) => {
           </tr>
         </tbody>
     {orderList.map(order=>(
-        <tbody>
+        <tbody key={order._id}>
           <tr className={styles.trTitle}>
               <td> {order._id.slice(0,5)}...</td>
               <td>{order.customer}</td>

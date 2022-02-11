@@ -2,23 +2,23 @@ import styles from '../styles/Add.module.css';
 import { useState } from 'react';
 import axios from 'axios';
 
-const Add = ({setClose}) => {
-  const [file,setFile] = useState (null);
-  const [title,setTitle] = useState (null);
-  const [desc,setDesc] = useState (null);
-  const [prices,setPrices] = useState ([]);
-  const [extraOptions,setExtraOptions] = useState ([]);
-  const [extra,setExtra] = useState (null);
+const Add = ({SetClose}) => {
+  const [file,SetFile] = useState (null);
+  const [title,SetTitle] = useState (null);
+  const [desc,SetDesc] = useState (null);
+  const [prices,SetPrices] = useState ([]);
+  const [extraOptions,SetExtraOptions] = useState ([]);
+  const [extra,SetExtra] = useState (null);
   
 
   const changePrice = (e,index)=>{
     const currentPrices = prices;
     currentPrices[index]=e.target.value;
-    setPrices(currentPrices);
+    SetPrices(currentPrices);
   };
 
   const handleExtraInput = (e) =>{
-    setExtra({
+    SetExtra({
       ...extra,
       [e.target.name]:e.target.value
       });
@@ -26,7 +26,7 @@ const Add = ({setClose}) => {
   
   //create new Array of extra options
   const handleExtra = (e) =>{
-    setExtraOptions((prev)=>[...prev, extra]);
+    SetExtraOptions((prev)=>[...prev, extra]);
   };
 
   const handleCreateFruit = async (e,index)=>{
@@ -58,7 +58,7 @@ const Add = ({setClose}) => {
             };
             const fruitPost = await axios.post("http://localhost:3000/api/fruitProducts", newFruitProduct);
             
-            setClose(true);
+            SetClose(true);
             }
           }catch(err){
             console.log('err of fruit post:>> ', err);
@@ -92,7 +92,7 @@ const Add = ({setClose}) => {
               img:url,
             };
             await axios.post("http://localhost:3000/api/shakeProducts", newShakeProduct);
-            setClose(true);
+            SetClose(true);
           }
     }catch(err){
       console.log('err of shake post:>> ', err);
@@ -102,19 +102,19 @@ const Add = ({setClose}) => {
   return ( 
   <div className={styles.container}>
     <div className={styles.wrapper}>
-      <span onClick={()=>setClose(true)} className={styles.close}>X</span>
+      <span onClick={()=>SetClose(true)} className={styles.close}>X</span>
       <h1>Add a new Product</h1>
       <div className={styles.item}>
         <label className={styles.label}>Choose an Image</label>
-        <input type="file" onChange={(e)=>setFile(e.target.files[0])}/>
+        <input type="file" onChange={(e)=>SetFile(e.target.files[0])}/>
       </div>
       <div className={styles.item}>
           <label className={styles.label}>Title</label>
-          <input type="text" className={styles.input} onChange={(e)=>setTitle(e.target.value)}/>
+          <input type="text" className={styles.input} onChange={(e)=>SetTitle(e.target.value)}/>
         </div>
         <div className={styles.item}>
           <label className={styles.label}>Description</label>
-          <textarea rows={4} type="text" className={styles.input} onChange={(e)=>setDesc(e.target.value)}/>
+          <textarea rows={4} type="text" className={styles.input} onChange={(e)=>SetDesc(e.target.value)}/>
         </div>
         <div className={styles.item}>
           <label className={styles.label}>Prices</label>

@@ -9,7 +9,7 @@ import Menu from '../component/Menu';
 
 
 export default function Home({shakeproducts, fruitproducts,admin}) {
-  const [close,setClose]=useState(true);
+  const [close,SetClose]=useState(true);
 
   return (
     <div>
@@ -19,9 +19,9 @@ export default function Home({shakeproducts, fruitproducts,admin}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <Featured />
-        {admin && <AddButton setClose={setClose}/>}
+        {admin && <AddButton SetClose={SetClose}/>}
         <Menu shakeproducts={shakeproducts} fruitproducts={fruitproducts}/>
-        {!close && <Add setClose={setClose}/>}
+        {!close && <Add SetClose={SetClose}/>}
     </div>
   )
 }

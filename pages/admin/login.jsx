@@ -4,9 +4,9 @@ import { useState } from "react";
 import styles from "../../styles/Login.module.css"
 
 const Login = () => {
-  const [username,setUsername]= useState(null);
-  const [password,setPassword]=useState(null);
-  const [error,setError] = useState(false);
+  const [username,SetUsername]= useState(null);
+  const [password,SetPassword]=useState(null);
+  const [error,SetError] = useState(false);
   const router = useRouter();
 
   const handleClick = async()=>{
@@ -18,7 +18,7 @@ const Login = () => {
       });
       router.push("/admin");
     }catch(err){
-      setError(true);
+      SetError(true);
     }
   }
   return (
@@ -29,13 +29,13 @@ const Login = () => {
           type="text" 
           placeholder="Username" 
           className={styles.input} 
-          onChange={(e)=>setUsername(e.target.value)}
+          onChange={(e)=>SetUsername(e.target.value)}
            />
         <input 
           placeholder="Password"
           type="password"
           className={styles.input} 
-          onChange={(e)=>setPassword(e.target.value)}
+          onChange={(e)=>SetPassword(e.target.value)}
           />
         <button onClick={handleClick} className={styles.button}>Sign In</button>
         {error && <span className={styles.error}>Wrong Credentials</span>}
