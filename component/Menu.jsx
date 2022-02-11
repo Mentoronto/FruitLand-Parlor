@@ -6,7 +6,7 @@ import ShakesCard from "./ShakesCard";
 
 const Menu = ({shakeproducts,fruitproducts}) => {
   return (
-  <div className={styles.container} id="Main-section" scroll={false}>
+  <div className={styles.container} id="Main-section">
     <div className={styles.leaves}>
       <Image src="/img/leaf.png" alt="" width={550} height={550}/> 
     </div>
@@ -15,7 +15,7 @@ const Menu = ({shakeproducts,fruitproducts}) => {
     </div>
     <h1 className={styles.title}>Fruit Menu</h1>
     <p className={styles.desc}>
-    There are many gifts that can be sent to friends and families when they are well, but when something unfortunate happens or when someone is ill, you only ever send them flowers or fruits as a gesture of good fortune and health.<br></br>We seek to provide luxury fruits based on season to present to your family or friends as a 'Get Well Soon' gift. 
+    There are many gifts that can be sent to friends and families when they are well, but when something unfortunate happens or when someone is ill, you only ever send them flowers or fruits as a gesture of good fortune and health.<br></br>We seek to provide luxury fruits based on season to present to your family or friends as a 'Get Well Soon' gift.
     </p>
     <div className={styles.wrapper}>
       {fruitproducts.map(fruits=>(
