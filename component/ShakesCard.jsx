@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const ShakesCard = ({shakes}) => {
   return (
-    <Link href={`/shakeProduct/${shakes._id}` } passHref>
+    <Link href={`/ShakeProduct/${shakes._id}` } passHref>
       <div className={styles.container}>
         <Image src={shakes.img} alt=""  objectFit="contain" width={300} height={300}/>
         <h1 className={styles.title}>{shakes.title}</h1>
