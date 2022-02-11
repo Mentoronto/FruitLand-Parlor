@@ -32,7 +32,7 @@ const index = ({orders, fruitProducts,shakeProducts}) => {
     const currentStatus = item.status;
    
     try{
-      const res = await axios.put("http://localhost:3000/api/orders/"+id,{status:currentStatus+1});
+      const res = await axios.put("http://localhost:3000/api/orders/"+id,{status:currentStatus+1,});
       setOrderList([
         res.data,
         ...orderList.filter(order=>order._id !== id),
@@ -153,8 +153,8 @@ export const getServerSideProps = async (ctx) =>{
       redirect:{
         destination:"/admin/login",
         permanent:false,
-      }
-    }
+      },
+    };
   }
   const fruitProductRes = await axios.get("http://localhost:3000/api/fruitProducts");
   const shakeProductRes = await axios.get("http://localhost:3000/api/shakeProducts");

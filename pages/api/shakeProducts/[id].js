@@ -5,9 +5,12 @@ export default async function handler(req,res){
   const {
     method,
     query:{id},
+    cookies
   }=req;
 
-  dbConnect ();
+  const token = cookies.token;
+
+  await dbConnect ();
 
   if(method === "GET"){
     try{
@@ -19,8 +22,11 @@ export default async function handler(req,res){
   }
 
   if(method === "PUT"){
+    if(!token || token!==process.env.token){
+      return res.status(401).json("Not authenticated");
+    }
     try{
-      const product = await shakeProduct.create(req.body);
+      const product = await shakeProduct.findByIdAndUpdate(id,req.body,{new:true,});
       res.status(201).json(product);
 
     }catch(err){
@@ -29,6 +35,9 @@ export default async function handler(req,res){
   }
 
   if(method === "DELETE"){
+    if(!token || token!==process.env.token){
+      return res.status(401).json("Not authenticated");
+    }
     try{
       await shakeProduct.findByIdAndDelete(id);
       res.status(201).json("The Shake has been deleted!");

@@ -1,12 +1,16 @@
 import axios from 'axios';
 import Head from 'next/head';
-import Image from 'next/image';
+import { useState } from 'react';
+import Add from '../component/Add';
+import AddButton from '../component/AddButton';
 import Featured from '../component/Featured';
 import Menu from '../component/Menu';
 
 
+
 export default function Home({shakeproducts, fruitproducts,admin}) {
-  
+  const [close,setClose]=useState(true);
+
   return (
     <div>
       <Head>
@@ -15,8 +19,9 @@ export default function Home({shakeproducts, fruitproducts,admin}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <Featured />
-        {admin && <span> Hel </span>}
+        {admin && <AddButton setClose={setClose}/>}
         <Menu shakeproducts={shakeproducts} fruitproducts={fruitproducts}/>
+        {!close && <Add setClose={setClose}/>}
     </div>
   )
 }
@@ -31,6 +36,7 @@ export const getServerSideProps = async (ctx) =>{
   // axios.defaults.baseURL = 'http://localhost:3000/';
   const resOne = await axios.get("http://localhost:3000/api/shakeProducts"); 
   const resTwo = await axios.get("http://localhost:3000/api/fruitProducts");
+  
   return{
     props:{
       shakeproducts:resOne.data,

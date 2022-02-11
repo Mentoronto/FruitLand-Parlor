@@ -1,0 +1,166 @@
+.mainAddButton {
+  padding: 10px;
+  margin: 20px;
+  background-color: #d1411e;
+  width: 150px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(173, 169, 169, 0.568);
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.wrapper {
+  width: 500px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 50px;
+  padding-bottom: 60px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 100%;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  color: white;
+  font-size: 1.2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input {
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+}
+
+.priceContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.inputSm {
+  width: 25%;
+}
+
+.extra {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.extraItems {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.extraItem {
+  padding: 5px;
+  font-size: 1.1rem;
+  border: 1px solid tomato;
+  color: tomato;
+  margin-right: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.fruitButton {
+  height: 60px;
+  width: 150px;
+  border-radius: 10px;
+  border: none;
+  background-color: #29a529;
+  padding: 10px 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 200;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  position: absolute;
+  bottom: 10px;
+}
+
+.shakeButton {
+  height: 60px;
+  width: 150px;
+  border-radius: 10px;
+  border: none;
+  background-color: #e7bc7b;
+  padding: 10px 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 200;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  position: absolute;
+  bottom: 10px;
+}
+/*# sourceMappingURL=Add.module.css.map */

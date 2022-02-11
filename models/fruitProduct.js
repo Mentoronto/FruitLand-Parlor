@@ -25,7 +25,8 @@ const fruitProductSchema = new mongoose.Schema({
     extraOptions:{
       type:[
         {
-          text:{type:String, required:true},
+          text:{type:String},
+          price:{type:Number},
         },
       ],
     },

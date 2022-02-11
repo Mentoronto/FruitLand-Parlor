@@ -33,7 +33,6 @@ const shakeProductSchema = new mongoose.Schema({
     },
     bg:{
       type:String,
-      required:true
     },
   },
  {timestamps:true}
