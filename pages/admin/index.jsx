@@ -11,7 +11,7 @@ const Index = ({orders, fruitProducts,shakeProducts}) => {
 
   const handleFruitDelete = async (id)=>{
       try{
-          const res = await axios.delete("http://localhost:3000/api/fruitProducts/"+id);
+          const res = await axios.delete("https://fruit-land-parlor.vercel.app/api/fruitProducts/"+id);
           SetFruitList(fruitList.filter(fruit=>fruit._id !== id));
       }catch(err){
         console.log('err :>> ', err);
@@ -19,7 +19,7 @@ const Index = ({orders, fruitProducts,shakeProducts}) => {
   }
   const handleShakeDelete = async (id)=>{
     try{
-        const res = await axios.delete("http://localhost:3000/api/shakeProducts/"+id);
+        const res = await axios.delete("https://fruit-land-parlor.vercel.app/api/shakeProducts/"+id);
         SetShakeList(shakeList.filter(shake=>shake._id !== id));
     }catch(err){
       console.log('err :>> ', err);
@@ -32,7 +32,7 @@ const Index = ({orders, fruitProducts,shakeProducts}) => {
     const currentStatus = item.status;
    
     try{
-      const res = await axios.put("http://localhost:3000/api/orders/"+id,{status:currentStatus+1,});
+      const res = await axios.put("https://fruit-land-parlor.vercel.app/api/orders/"+id,{status:currentStatus+1,});
       SetOrderList([
         res.data,
         ...orderList.filter(order=>order._id !== id),
@@ -156,9 +156,9 @@ export const getServerSideProps = async (ctx) =>{
       },
     };
   }
-  const fruitProductRes = await axios.get("http://localhost:3000/api/fruitProducts");
-  const shakeProductRes = await axios.get("http://localhost:3000/api/shakeProducts");
-  const orderRes = await axios.get("http://localhost:3000/api/orders");
+  const fruitProductRes = await axios.get("https://fruit-land-parlor.vercel.app/api/fruitProducts");
+  const shakeProductRes = await axios.get("https://fruit-land-parlor.vercel.app/api/shakeProducts");
+  const orderRes = await axios.get("https://fruit-land-parlor.vercel.app/api/orders");
   return {
     props:{
       orders:orderRes.data,

@@ -34,8 +34,8 @@ export const getServerSideProps = async (ctx) =>{
     admin=true;
   }
   // axios.defaults.baseURL = 'http://localhost:3000/';
-  const resOne = await axios.get("http://localhost:3000/api/shakeProducts"); 
-  const resTwo = await axios.get("http://localhost:3000/api/fruitProducts");
+  const resOne = await axios.get("https://fruit-land-parlor.vercel.app/api/shakeProducts"); 
+  const resTwo = await axios.get("https://fruit-land-parlor.vercel.app/fruitProducts");
   
   return{
     props:{

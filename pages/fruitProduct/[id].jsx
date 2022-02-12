@@ -83,7 +83,7 @@ const FruitProduct = ({fruit}) => {
 
 
 export const getServerSideProps = async ({params}) =>{
-  const res = await axios.get(`http://localhost:3000/api/fruitProducts/${params.id}`);
+  const res = await axios.get(`https://fruit-land-parlor.vercel.app/api/fruitProducts/${params.id}`);
   return{
     props:{
       fruit:res.data,
