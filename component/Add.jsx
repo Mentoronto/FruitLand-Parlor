@@ -56,7 +56,7 @@ const Add = ({SetClose}) => {
               extraOptions,
               img:url,
             };
-            const fruitPost = await axios.post("https://fruit-land-parlor.vercel.app/api/fruitProducts", newFruitProduct);
+            const fruitPost = await axios.post("https://fruitlandparlor.herokuapp.com/api/fruitProducts", newFruitProduct);
             
             SetClose(true);
             }
@@ -91,7 +91,7 @@ const Add = ({SetClose}) => {
               extraOptions,
               img:url,
             };
-            await axios.post("https://fruit-land-parlor.vercel.app/api/shakeProducts", newShakeProduct);
+            await axios.post("https://fruitlandparlor.herokuapp.com/api/shakeProducts", newShakeProduct);
             SetClose(true);
           }
     }catch(err){

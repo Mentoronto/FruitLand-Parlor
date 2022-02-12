@@ -91,7 +91,7 @@ const Order = ({order}) => {
 
 
 export const getServerSideProps = async ({params}) =>{
-  const res = await axios.get(`https://fruit-land-parlor.vercel.app/api/orders/${params.id}`);
+  const res = await axios.get(`https://fruitlandparlor.herokuapp.com/api/orders/${params.id}`);
   return{
     props:{ 
       order:res.data,
