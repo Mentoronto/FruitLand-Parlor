@@ -108,7 +108,7 @@ const ShakeProduct = ({shake}) => {
 
 
 export const getServerSideProps = async ({params}) =>{
-  const res = await axios.get(`https://fruit-land-parlor.vercel.app/api/shakeProducts/${params.id}`); 
+  const res = await axios.get(`https://fruitlandparlor.herokuapp.com/api/shakeProducts/${params.id}`); 
   return{
     props:{
       shake:res.data,
