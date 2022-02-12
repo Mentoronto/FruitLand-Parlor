@@ -1,8 +1,8 @@
 import styles from "../styles/AddButton.module.css";
 
-const AddButton = ({setClose}) => {
+const AddButton = ({SetClose}) => {
   return (
-    <div onClick={()=>setClose(false)} className={styles.mainAddButton}>
+    <div onClick={()=>SetClose(false)} className={styles.mainAddButton}>
       Add New Product
       </div>
   );
