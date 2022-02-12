@@ -11,7 +11,7 @@ const Login = () => {
 
   const handleClick = async()=>{
     try{
-      await axios.post("https://fruitlandparlor.herokuapp.com/api/login",
+      await axios.post("https://fruit-land-parlor.vercel.app/api/login",
       {
         username,
         password,
