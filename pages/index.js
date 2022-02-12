@@ -35,7 +35,7 @@ export const getServerSideProps = async (ctx) =>{
   }
   // axios.defaults.baseURL = 'http://localhost:3000/';
   const resOne = await axios.get("https://fruitlandparlor.herokuapp.com/api/shakeProducts"); 
-  const resTwo = await axios.get("https://fruitlandparlor.herokuapp.com/fruitProducts");
+  const resTwo = await axios.get("https://fruitlandparlor.herokuapp.com/api/fruitProducts");
   
   return{
     props:{
