@@ -36,6 +36,22 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 - React Hooks
 - React paypal
 
+## Packages and Libraries
+
+The following npm packages and libraries have been used
+
+|Package        |Info           |
+| ------------- |:-------------:|
+| next| A React framework built ontop of Node.js enabling React based web-app functionalities such as server-side rendering & generating static sites.  |
+| @reduxjs/toolkit | The Redux Toolkit package is intended to be the standard way to write Redux logic     |
+| react-redux | Official React UI bindings layer for Redux. Allows React components to read data from a Redux store,dispatch actions to the store and update state.   |
+| redux | A state container for Javascript applications      |
+| axios | Promise based HTTP client for the browser and node.js     |
+| mongoose | Is a ODM library for MongoDB     |
+|react | JavaScript library for building user interfaces    |
+| react-dom | Package that provides DOM-specific methods for React    |
+| sharp |The typical use case for this high speed Node.js module is to convert large images in common formats to smaller, web-friendly JPEG, PNG.  |
+| @paypal/react-paypal-js |Provides a solution to developers to abstract away complexities around loading the JS SDK. It enforces best practices by default so buyers get the best possible user experience. |
 
 ### LIVE VERSION
 [Checkout the apps live version](https://fruit-land-parlor.vercel.app/)
