@@ -51,7 +51,7 @@ The following npm packages and libraries have been used
 |react | JavaScript library for building user interfaces    |
 | react-dom | Package that provides DOM-specific methods for React    |
 | sharp |The typical use case for this high speed Node.js module is to convert large images in common formats to smaller, web-friendly JPEG, PNG.  |
-| @paypal/react-paypal-js |Provides a solution to developers to abstract away complexities around loading the JS SDK. It enforces best practices by default so buyers get the best possible user experience. |
+| @paypal/react-paypal-js |Provides a solution to developers to abstract away complexities around loading the JS SDK. It enforces best practices by default so buyers get the best possible user experience.|
 
 ### LIVE VERSION
 [Checkout the apps live version](https://fruit-land-parlor.vercel.app/)
